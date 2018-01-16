@@ -1,27 +1,13 @@
+$("#white").click({stylesel: "style.css"}, buttonChange);
+$("#dark").click({stylesel: "style-dark.css"}, buttonChange);
 
-function buttonChange(){
+function buttonChange(style){
+  $("#white").toggleClass('activebtn');
+  $("#dark").toggleClass('activebtn');
+  $("#stylesheetSlt").attr("href", style.data.stylesel); //selects the style sheet of the button clicked
+  $('#navigation').toggleClass('navbar-dark').toggleClass('navbar-light'); //Change the bootstrap settings for the navbar
  };
 
-$("#white").click(function(){
-$("#white").removeClass('activebtn');
-$("#dark").removeClass('activebtn');
-  $("#white").addClass('activebtn');
-$("#stylesheetSlt").attr("href", "style.css");
-$('#navigation').removeClass('navbar-dark').addClass('navbar-light');
-
-});
-
-
-$("#dark").click(function(){
-$("#white").removeClass('activebtn');
-$("#dark").removeClass('activebtn');
-  $("#dark").addClass('activebtn');
-$("#stylesheetSlt").attr("href", "style-dark.css");
-$('#navigation').removeClass('navbar-light').addClass('navbar-dark');
-});
-
-
-// Select all links with hashes
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
