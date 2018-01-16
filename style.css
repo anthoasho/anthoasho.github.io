@@ -20,19 +20,20 @@
 }
 
 body{
-  background: url(https://imgur.com/IzHJoSy.jpg) no-repeat center center fixed;
+ /* background: url(https://imgur.com/IzHJoSy.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
+          background: url(https://imgur.com/IzHJoSy.jpg);
+        background-size: cover;
+        background-position: center;
   color: white;
   height: 100%;
-font-family: 'Encode Sans Semi Condensed', sans-serif;
+  font-family: 'Encode Sans Semi Condensed', sans-serif;
 }
 h1 {
   color: #1e1e1e;
-  font-size: 500%;
-
 }
 h2 {
   color: white;
