@@ -1,0 +1,41 @@
+html {
+
+}
+.row {
+  margin: 20px auto;
+}
+.container{
+  background-color: rgba(61, 61, 61, 0.5);
+  border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+body{
+  background: url(https://imgur.com/IzHJoSy.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  height: 100%;
+
+}
+h1 {
+  color: #e23a14;
+}
+h2 {
+  color: white;
+}
+a{
+  color: white;
+  font-weight: 700;
+}
+a:hover {
+  color: #e23a14;
+}
+.disabled{
+  text-decoration: line-through;
+  color:black;
+}
