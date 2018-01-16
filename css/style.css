@@ -1,4 +1,6 @@
-
+body, html{
+  height: 100%;
+}
 .row {
   margin: 20px auto;
 }
@@ -25,11 +27,11 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; */
-          background: url(https://imgur.com/IzHJoSy.jpg);
-        background-size: cover;
-        background-position: center;
+  background: url(https://imgur.com/IzHJoSy.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
-  height: 100%;
   font-family: 'Encode Sans Semi Condensed', sans-serif;
 }
 h1 {
