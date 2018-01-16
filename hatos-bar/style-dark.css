@@ -7,12 +7,6 @@
 
 }
 
-/* #A92F41 - red
-  #E5DFC5 - cream
-  #848375 - light brown cream
-  #91C7A9 - mulled blue
-  #252120 - dark
-*/
 body{
   padding-top: 40px;
   background-color: #f9eddf;
@@ -61,8 +55,8 @@ body{
   border: 1px solid white;
   margin: 2px 0;
   background-color: rgba(0, 0, 0, 0.5);
-
   color: #E5DFC5;
+  font-size: 0.9em;
 }
 
 .activebtn{
@@ -70,10 +64,10 @@ body{
 }
 .row{
   margin: 10px 0;
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .navbar-brand{
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
 }
 #hatos img{
@@ -85,12 +79,12 @@ body{
           transition: 0.5s;
 }
 #homelink:hover {
-    color: #d1bfa7;
+  color: #d1bfa7;
 }
 #homelink {
-    line-height: 30pxs;
-    font-size: 1.5em;
-    padding: auto;
+  line-height: 30pxs;
+  font-size: 1.5em;
+  padding: auto;
 }
 hr{
 	background-color: #bd8c7d;
@@ -118,6 +112,9 @@ hr.contsep {
   padding-bottom: 40px;
   z-index:10;
   color: #f9eddf!important;
+}
+.contents h2 {
+  color: #d1bfa7;
 }
 .first {
   margin-top: 600px;
