@@ -7,7 +7,10 @@ function buttonChange(style){
   $("#stylesheetSlt").attr("href", style.data.stylesel); //selects the style sheet of the button clicked
   $('#navigation').toggleClass('navbar-dark').toggleClass('navbar-light'); //Change the bootstrap settings for the navbar
  };
-
+ 
+ $('.navbar-collapse a').click(function(){
+     $(".navbar-collapse").collapse('hide');
+ });
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
