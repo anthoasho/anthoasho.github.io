@@ -117,6 +117,9 @@ hr.contsep {
   color: #252120!important;
 
 }
+.contents h2 {
+  color: #A92F41;
+}
 .first {
   margin-top: 600px;
 }
