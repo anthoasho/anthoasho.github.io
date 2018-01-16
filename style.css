@@ -1,17 +1,24 @@
-html {
 
-}
 .row {
   margin: 20px auto;
 }
 .container{
-  background-color: rgba(61, 61, 61, 0.5);
-  border: 1px solid black;
   position: absolute;
   top: 50%;
   left:50%;
   transform: translate(-50%,-50%);
 }
+.title{
+  background-color: rgba(61, 61, 61, 0.5);
+  border: 1px solid black;
+  margin: 0 0 15% 0 ;
+}
+.project{
+  background-color: rgba(221, 217, 217, 0.2);
+  border: 1px solid white;
+  margin: 0;
+}
+
 body{
   background: url(https://imgur.com/IzHJoSy.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -20,10 +27,12 @@ body{
   background-size: cover;
   color: white;
   height: 100%;
-
+font-family: 'Encode Sans Semi Condensed', sans-serif;
 }
 h1 {
-  color: #e23a14;
+  color: #1e1e1e;
+  font-size: 500%;
+
 }
 h2 {
   color: white;
