@@ -206,7 +206,7 @@ body, html{
 @media screen and (max-width: 500px){
   .panel {
     flex-direction: column;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     justify-content: space-around;
     box-sizing: border-box;
     padding: 20% 0;
@@ -218,21 +218,33 @@ body, html{
 
   }
   .title{
-    margin: 0;
+    margin: 0 auto;
   }
   .text{
-    margin: 0;
+    margin: 0 auto;
+    padding: 0 10px;
   }
   .information{
     order:2!important;
+    margin: 0 auto;
 
   }
   .button{
     font-size: 0.8rem;
     padding: 10px 20px;
+    margin: 10px 5px;
+    flex: 1 0;
   }
   .intro-title{
     letter-spacing: 0.9rem;
+  }
+  .button-area{
+    position: relative;
+    height: auto;
+    order: 3;
+    /* justify-content: flex-end; */
+    flex-direction: row;
+    width: 90%;
   }
   .landing{
     display: flex;
