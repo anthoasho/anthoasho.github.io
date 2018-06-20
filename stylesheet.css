@@ -194,6 +194,7 @@ body, html{
 }
 .panel:nth-of-type(even) .information{
   order: 2;
+  align-items: flex-end;
 }
 .panel:nth-of-type(odd) img{
   order: 2
