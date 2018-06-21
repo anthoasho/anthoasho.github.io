@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>test</title>
-
+    <script src="fontawesome-all.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body>
@@ -21,6 +21,8 @@
     </div>
     <div id="gallery" class="gallery">
       <div  class="panel">
+        <div class="vertical">
+          <div class="content">
         <div class="information">
           <h1 class="title">Photo 1</h1>
           <p class="text">
@@ -28,6 +30,9 @@
           </p>
         </div>
         <img src="public/images/1.JPG" alt="">
+      </div>
+    </div>
+
         <div class="button-area">
           <button onClick='window.smoothScroll.bind(this, "top")()' class="button panel-button-next" type="button" name="button">Top</button>
           <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
@@ -35,6 +40,8 @@
         </div>
       </div>
       <div class="panel">
+        <div class="vertical">
+          <div class="content">
         <div class="information">
           <h1 class="title">Photo 2</h1>
           <p class="text">
@@ -42,20 +49,41 @@
           </p>
         </div>
         <img src="public/images/2.JPG" alt="">
+      </div>
+    </div>
         <div class="button-area">
           <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
           <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
 
         </div>
       </div>
-      <div class="panel">
-        <div class="information">
-          <h1 class="title">Photo 3</h1>
-          <p class="text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+      <div id="morikin" class="panel">
+        <div class="vertical">
+          <div class="content">
+            <div class="information">
+              <h1 class="title">Morikin</h1>
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <img src="public/images/3.JPG" alt="">
+            <div class="order-right">
+              <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+          <div class="content">
+            <div class="information">
+              <h1 class="title">Morikin</h1>
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <img src="public/images/3.JPG" alt="">
+            <div class="order-left">
+              <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button"><i class="fas fa-arrow-left"></i></button>
+            </div>
+          </div>
         </div>
-        <img src="public/images/3.JPG" alt="">
           <div class="button-area">
             <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
             <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
@@ -63,6 +91,8 @@
           </div>
       </div>
       <div class="panel">
+        <div class="vertical">
+          <div class="content">
         <div class="information">
           <h1 class="title">Photo 4</h1>
           <p class="text">
@@ -70,13 +100,17 @@
           </p>
         </div>
         <img src="public/images/4.JPG" alt="">
-        <div class="button-area">
-          <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
+      </div>
+    </div>
+    <div class="button-area">
+    <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
           <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
 
         </div>
       </div>
       <div class="panel">
+        <div class="vertical">
+          <div class="content">
         <div class="information">
           <h1 class="title">Photo 5</h1>
           <p class="text">
@@ -84,13 +118,17 @@
           </p>
         </div>
         <img src="public/images/5.JPG" alt="">
-        <div class="button-area">
-          <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
+      </div>
+    </div>
+    <div class="button-area">
+    <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
           <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
 
         </div>
       </div>
       <div class="panel">
+        <div class="vertical">
+          <div class="content">
         <div class="information">
           <h1 class="title">Photo 6</h1>
           <p class="text">
@@ -98,13 +136,17 @@
           </p>
         </div>
         <img src="public/images/6.JPG" alt="">
-        <div class="button-area">
-          <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
+      </div>
+    </div>
+    <div class="button-area">
+    <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
           <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
 
         </div>
       </div>
       <div class="panel">
+        <div class="vertical">
+          <div class="content">
         <div class="information">
           <h1 class="title">Photo 7</h1>
           <p class="text">
@@ -112,13 +154,18 @@
           </p>
         </div>
         <img src="public/images/7.JPG" alt="">
-        <div class="button-area">
-          <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
+      </div>
+    </div>
+    <div class="button-area">
+    <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
           <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
 
         </div>
       </div>
       <div class="panel">
+        <div class="vertical">
+          <div class="content">
+
         <div class="information">
           <h1 class="title">Photo 8</h1>
           <p class="text">
@@ -126,22 +173,28 @@
           </p>
         </div>
         <img src="public/images/8.JPG" alt="">
-        <div class="button-area">
-          <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
-          <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
+      </div>
+    </div>
+    <div class="button-area">
+      <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
+    <button onClick='window.smoothScroll.bind(this)()' class="button panel-button-next" type="button" name="button">Next</button>
 
         </div>
       </div>
       <div class="panel">
+        <div class="vertical">
+          <div class="content">
         <div class="information">
-          <h1 class="title">Photo 9</h1>
+          <h1 class="title">About Me</h1>
           <p class="text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
         <img src="public/images/9.JPG" alt="">
-        <div class="button-area">
-          <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
+      </div>
+    </div>
+    <div class="button-area">
+    <button onClick='window.smoothScroll.bind(this, "previous")()' class="button panel-button-next" type="button" name="button">Previous</button>
           <button onClick='window.smoothScroll.bind(this, "top")()' class="button panel-button-next" type="button" name="button">Top</button>
         </div>
       </div>

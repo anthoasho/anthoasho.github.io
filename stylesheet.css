@@ -26,6 +26,7 @@ body, html{
 ::-webkit-scrollbar{
   width: 4px;
   background: #00000000;
+  height: 4px;
 }
 ::-webkit-scrollbar-track{
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 1);
@@ -63,6 +64,38 @@ body, html{
   animation: fadeIn 5s 0.5s ease forwards;
   opacity: 0;
 }
+#morikin{
+  background-image: radial-gradient(circle closest-corner, #00c6fbf0, #005beaf0);
+  background-size: cover;
+}
+#morikin .title{
+  color: white;
+  text-shadow: 0px 1px 1px black;
+}
+.vertical{
+  display: flex;
+  overflow-x: hidden;
+  height: 100%;
+}
+.content{
+  min-width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content .button{
+  border-radius: 50%;
+  width: 50px;
+  padding: 0;
+  height: 50px;
+  margin: 0 20px;
+}
+.order-right{
+  order: 3;
+  justify-self: flex-end;
+}
+
 @keyframes fadeIn {
     from{
       opacity: 0;
@@ -117,8 +150,11 @@ body, html{
   justify-content: space-between;
   height: 90vh;
   opacity: 0.7;
-  width: 200px;
-
+  width: 150px;
+}
+.button-area .button{
+  padding: 8px 0 ;
+  border-width: 1px;
 }
 .panel img{
   width: 40%;
@@ -205,18 +241,37 @@ body, html{
 
 
 @media screen and (max-width: 500px){
-  .panel {
+  .panel{
     flex-direction: column;
     font-size: 0.6rem;
-    justify-content: space-around;
+    justify-content: center;
     box-sizing: border-box;
-    padding: 20% 0;
+    /* padding: 20% 0; */
   }
-  .panel img{
+  .content .button{
+    /* display: none; */
+    order: 3!important;
+  }
+  .vertical{
+    display: flex;
+    width: 100%;
+    flex: 0 0 85%;
+    overflow:hidden;
+    height: 100vh!important;
+  }
+  .order-left{
+    order: 3;
+  }
+  .content{
+    flex-direction: column;
+    justify-content: space-around;
+    overflow:hidden;
+    width:100%;
+  }
+  .panel img, .content img{
     width: 90%;
     filter: grayscale(100%);
     order: 1!important;
-
   }
   .title{
     margin: 0 auto;
