@@ -18,6 +18,7 @@ body, html{
   overflow: hidden;
 
 }
+
 .fixed{
   display: flex;
   flex-direction: column;
@@ -72,6 +73,10 @@ body, html{
   color: white;
   text-shadow: 0px 1px 1px black;
 }
+#morikin .vertical .content img{
+  filter: blur(1px);
+  transform: rotate(90deg);
+}
 .vertical{
   display: flex;
   overflow-x: hidden;
@@ -82,6 +87,7 @@ body, html{
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .content .button{
@@ -95,6 +101,11 @@ body, html{
   order: 3;
   justify-self: flex-end;
 }
+.order-left{
+  order: 1;
+  justify-self: flex-end;
+}
+
 
 @keyframes fadeIn {
     from{
@@ -113,14 +124,59 @@ body, html{
   background: none;
   border: 2px solid #383838;
   border-radius: 5px;
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   cursor: pointer;
-  animation: fadeIn 5s 0.5s ease forwards;
+  animation: fadeIn 2s 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   opacity: 0;
+  position: relative;
+    color: #383838;
+  overflow: hidden;
+}
+.button::after, .button::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #383838;
+  position:absolute;
+    transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.button::after{
+  transform: translateY(-101%);
+}
+ .button::before{
+   transform: translateY(101%);
+
+ }
+.button:hover::after, .button:hover::before{
+  transform:translateY(0%);
 }
 .button:hover{
   background: #383838;
   color: #fbfbfb;
+}
+.button:hover .arrow-icon{
+  transform: scale(1);
+  opacity: 1;
+}
+.arrow-icon{
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  font-weight: 200;
+  text-shadow: 1px 1px 1px #ffffff;
+  z-index: 3;
+  opacity: 0;
+}
+.arrow-icon-next{
+  transform: scale(0.1);
+}
+.arrow-icon-prev{
+  opacity: 0;
+  transform: scale(0.1);
 }
 .intro-title{
     font-weight:lighter;
@@ -139,10 +195,8 @@ body, html{
   height: 100vh;
   min-width: 100vw;
   position: relative;
+  overflow: hidden;
 }
-
-
-
 .button-area{
   position: absolute;
   display: flex;
@@ -159,19 +213,45 @@ body, html{
 .panel img{
   width: 40%;
   filter: grayscale(100%);
-
 }
 .panel img, .panel p, .title{
   opacity: 0;
   transition: opacity 2s;
+  display: none;
 }
 
 .inview  img, .inview  p, .inview .title{
-  /* opacity: 1!important; */
   animation: fadeInPanel 2s 0.1s ease forwards;
-
+  display: block;
 }
-
+.background-logo{
+  position: absolute;
+  /* bottom: -25%; */
+  right:-10%;
+  width: 50%;
+  /* color: green; */
+  filter: invert(90%);
+  transform: rotate(-25deg);
+  margin: 0;
+  padding:0;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+  /* max-height: 50%; */
+  /* overflow: hidden; */
+}
+.panel{
+  z-index: 10;
+}
+.background-logo img{
+  animation: fadeInImage 0.8s forwards cubic-bezier(0.77, 0, 0.175, 1);
+  border-radius: 50%;
+  width: 100%;
+  margin: 0;
+  /* background: green; */
+  opacity: 1;
+  overflow: hidden;
+}
 @keyframes fadeInPanel {
     0%{
       opacity: 0;
@@ -185,6 +265,21 @@ body, html{
     100%{
       transform: rotateX(0deg);
       opacity: 1;
+    }
+}
+@keyframes fadeInImage {
+    0%{
+      display: none;
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    80%{
+      transform: translateY(30%);
+    }
+    100%{
+      transform: translateY(40%);
+      opacity: 1;
+      /* filter:blur(0px); */
     }
 }
 .gallery:nth-child(even){
@@ -202,20 +297,24 @@ body, html{
   background: #383838;
   align-items: center;
 }
-.panel:nth-last-of-type(odd) .button{
+.panel:nth-of-type(odd) .button{
   color: #fefefe;
   border-color: #fefefe;
 }
-.panel:nth-last-of-type(odd) .button:hover{
+.panel:nth-of-type(odd) .button:hover{
   color: #383838;
   border-color: #fefefe;
+}
+.panel:nth-of-type(odd) .button::after, .panel:nth-of-type(odd) button::before{
   background: #fefefe;
+
 }
 .information{
   flex: 0 1 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  order:1;
 }
 .title{
   padding: 0;
@@ -223,6 +322,7 @@ body, html{
 .text{
   line-height: 2rem;
   font-size: 0.9rem;
+  white-space: pre-line;
 }
 .panel:nth-of-type(odd) .information{
   order: 1;
@@ -234,7 +334,7 @@ body, html{
 }
 .panel:nth-of-type(odd) img{
   order: 2
-}.panel:nth-of-type(odd) img{
+}.panel:nth-of-type(even) img{
   order: 1
 }
 
