@@ -18,12 +18,13 @@ let navIcon =  smartElement("div", navButton, "hamburger");
 for(let i = 0; i<3; i++){
   smartElement("div", navIcon, "line")
 }
-let navButtonContainer = smartElement("div", navButton, "nav-button-area")
+let navButtonContainer = smartElement("div", navContainer, "nav-button-area nav-area-hide")
 navButton.addEventListener("click", function(){
   let navArea = document.querySelector(".nav-button-area")
   navButton.childNodes[0].classList.toggle("close")
   console.log(navButton.childNodes)
   navArea.classList.toggle("nav-area-show")
+  navArea.classList.toggle("nav-area-hide")
   console.log(navIcon)
 })
 function makeLayoutFromArray(data){
@@ -78,21 +79,20 @@ function createPane(location, data, vertical){
     let text = smartElement("p", information, "text", {innerHTML: element.text})
     let navButton = smartElement("div", navRow, "nav-button-selector")
     navButton.addEventListener("click",function(){
+      navIcon.classList.remove("close")
       let horizontal = document.getElementById(element.id)
       let vertical = document.getElementById(`${element.id}-${i}`)
-        let navArea = document.querySelector(".nav-button-area")
-        setTimeout(() => {
-        navArea.classList.remove("nav-area-show")
-        horizontal.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        })
-        setTimeout(() => {  vertical.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          })
-        }, 500)
-        }, 500)
+      let navArea = document.querySelector(".nav-button-area")
+      horizontal.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
+      vertical.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
+      navArea.classList.remove("nav-area-show")
+
 
     })
     let test = smartElement("p", navButton, null, {innerText: element.title})

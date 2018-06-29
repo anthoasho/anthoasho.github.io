@@ -16,7 +16,7 @@ const Morikin = {
         }
       },
       { id: "morikin",
-        title: "Morikin 2",
+        title: "Morikin",
         text: "hello again",
         img: {
           src: "public/images/3.JPG",
@@ -28,7 +28,7 @@ const Morikin = {
 const jsStudy = {
   id: "js-study",
   data:[{id: "js-study",
-        title: "Javascript study timeline",
+        title: "JS Study",
         text: `After studying Javascript entirely in the console, I began to try and use my acquired knowledge to create different small projects.
         I have decided to leave their code as-is to hopefully help demonstrate my path of studies.
         `,
@@ -38,7 +38,7 @@ const jsStudy = {
         }
 },
 {id: "js-study",
-      title: "Basic Tag Editor",
+      title: "Tags",
       text: `One of my first solo projects came in the form of a now seemingly remnant element of the web, a tag editor. It began as my introduction to jQuery. `,
       img: {
         src: "public/images/1.JPG",
@@ -46,7 +46,7 @@ const jsStudy = {
       }
 },
 {id: "js-study",
-      title: "My first Calculator",
+      title: "Calculator",
       text: `My next challenge was to attempt to create a working calculator with a simple design. Here I decided to forego jQuery to help facilitate my studies of Vanilla JS further.
       I encountered a number of initial challenges during this mini-project. The aim of the design was to replicate the traditional calculator look with a self-erasing screen while storing the memory of the calculation.
       One of the main takeaways of this project was to ensure the security of code as I used Eval() to finalise calculations in the project.
@@ -57,7 +57,7 @@ const jsStudy = {
       }
 },
 {id: "js-study",
-      title: "Random User Generator",
+      title: "Fetch",
       text: `Knowing the importance of APIs in modern web, it was important to get an understanding of APIs. This was a small widget that would fetch from <a href="https://randomuser.me/api">randomuser.me/api</a>.
             Despite using jQuery as the method of fetching here, I have since preferred to use Axios.js.
       `,
@@ -72,7 +72,7 @@ const AboutMe = {
   id: "about",
   data:[{
       id: "about",
-      title: "About Me",
+      title: "Me",
       text: `
       An aspiring Web Developer from the United Kingdom who is looking to begin a career in Japan working as a  junior Javascript Developer.
       `,
@@ -100,7 +100,7 @@ const opening = {
   id: "opening",
   data:[{
     id: "opening",
-    title: "Hi!",
+    title: "Hello",
     text: `My name is Anthony - thanks for visiting. `,
     img:{
       src: "public/images/7.JPG",
@@ -128,7 +128,7 @@ const Designs = {
     }
   },
   {id: "design",
-      title: "Loading icons",
+      title: "Loading",
       text: `Here are a few of my loading icons I have designed entirely in CSS.`,
       scriptBox:[
         [{className: "loader-one loader-one-main", parentClass:"goo", title: "An orbiting animation"},{className: "loader-one loader-one-support"}],
