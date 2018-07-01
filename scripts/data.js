@@ -40,9 +40,8 @@ const jsStudy = {
 {id: "js-study",
       title: "Tags",
       text: `One of my first solo projects came in the form of a now seemingly remnant element of the web, a tag editor. It began as my introduction to jQuery. `,
-      img: {
-        src: "public/images/1.JPG",
-        alt: "code picture"
+      tagEditor:{
+        code: `asdas`
       }
 },
 {id: "js-study",
@@ -51,9 +50,66 @@ const jsStudy = {
       I encountered a number of initial challenges during this mini-project. The aim of the design was to replicate the traditional calculator look with a self-erasing screen while storing the memory of the calculation.
       One of the main takeaways of this project was to ensure the security of code as I used Eval() to finalise calculations in the project.
       `,
-      img: {
-        src: "public/images/1.JPG",
-        alt: "code picture"
+      calculator: {
+        code: `let inputDataTotal = [];
+        let inputDataShow = [];
+        let dataFinal = null;
+        let equals = false;
+        let testVar = document.getElementById('input');
+        //Creates a function to alter data
+        clearData = function(equal, data){
+                      inputDataShow = [data];
+                      inputDataTotal = [data];
+                      equals = equal;
+        }
+        function dataInput(input){
+              //clears all calculations
+              if (input === 'CE'){
+                    clearData(false, []);
+                    testVar.value = 0;
+              }
+              //Inserts the operator and clears the input field
+              else if(input === '/' || input === '*' || input === '+' || input === '-'){
+                    inputDataTotal.push(input);
+                    testVar.value = input;
+                    inputDataShow = [];
+                    equals = false;
+              }
+              //Conducts final calculation and pushes it to input field
+              else if (input === '='){
+                    calculation = function(){
+                         return eval(inputDataTotal.join(''));
+                    }
+                    dataFinal = parseFloat(calculation().toFixed(8));
+                    if(calculation() === undefined){
+                         testVar.value = 'Please input';
+                    }else{
+                          testVar.value = dataFinal;
+                           clearData(true, [dataFinal])
+                          }
+
+              }
+              //Checks to see if a period has been entered and disables duplicates
+              else if (input === '.'){
+                    if (!inputDataShow.includes('.')){
+                           if(equals === true){
+                           clearData(false, []);
+                        }
+                    inputDataShow.push(input);
+                    inputDataTotal.push(input);
+                    testVar.value = inputDataShow.join('') ;
+                }
+              }
+              //pushes the pressed number
+              else{
+                if(equals === true){
+                     clearData(false, []);
+                }
+                inputDataShow.push(input);
+                inputDataTotal.push(input);
+               testVar.value = inputDataShow.join('') ;
+              }
+        }`
       }
 },
 {id: "js-study",
@@ -130,10 +186,10 @@ const Designs = {
   {id: "design",
       title: "Loading",
       text: `Here are a few of my loading icons I have designed entirely in CSS.`,
-      scriptBox:[
+      loaderBox:[
         [{className: "loader-one loader-one-main", parentClass:"goo", title: "An orbiting animation"},{className: "loader-one loader-one-support"}],
         [{className: "loader-one-alternate loader-one-alternate-main", parentClass:"goo", title: "Alternate timings of previous"},{className: "loader-one-alternate loader-one-alternate-support"}],
-      [{className: "loader-two", title: "Rotating loader with illusion"}, {className: "loader-two"}],
+        [{className: "loader-two", title: "Rotating loader with illusion"}, {className: "loader-two"}],
         [{className:"loader-three", title: "Bouncing loader with image"}],
         [{className: "loader-four", title: "Small loading icon"}]
       ]

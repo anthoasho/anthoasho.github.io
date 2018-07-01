@@ -1,0 +1,242 @@
+.calculator-container{
+  box-shadow: inset 2px 2px 3px  #00000022, 1px 1px 1px #eeeeee11  ;
+  padding: 14px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 50%;
+  min-width: 50%;
+  justify-content: flex-start;
+  order: 2;
+  height: 100%;
+  align-content: center;
+  align-items: center;
+}
+.code-box{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 0.9rem;
+  background: #3e3e3e;
+  height: 100%;
+  z-index: 10;
+  margin: auto;
+  overflow-y: scroll;
+  padding-left: 10px;
+  transition: all 1s ease;
+  opacity: 1;
+  /* display: none; */
+  /* pointer-events: none; */
+}
+.code-box .no-opacity{
+  pointer-events: none;
+
+}
+.code-show{
+  opacity: 1;
+  /* display: flex; */
+}
+.code-icon{
+  transition: all 1s ease;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  width: 80px!important;
+  padding: 10px!important;
+  margin: 0!important;
+  padding:10px!important;
+  border-radius: 1px !important;
+}
+.selected{
+  background: green;
+}
+#calculator-body{
+  flex: 0 0 50%;
+  background-color:#dbdbdb;
+  border: 1px solid #a5a5a5;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow:  2px 2px 3px #00000033;
+}
+#calculator-body #input{
+  width:220px;
+  height:50px;
+  text-align: right;
+  font-size:35px;
+}
+#calculator-body .row{
+  height: 60px;
+  width:220px;
+  display: flex;
+  justify-content: flex-end;
+}
+#calculator-body .row:nth-of-type(1){
+  margin: 5px 0;
+}
+#calculator-body button{
+  width: 50px;
+  height:90%;
+  margin: 2px;
+  border: #a5a5a5 solid 1px;
+  font-family: 'Mukta Malar', sans-serif;
+  font-size: 20px;
+  outline:none;
+}
+#calculator-body input:disabled{
+  background: white;
+}
+#calculator-body button:active{
+  background-color:#c5e0dc;
+  transition: 0.2s;
+}
+#calculator-body .function{
+  background-color:#a5a5a5;
+}
+#calculator-body .function:active{
+  background-color: #92aaa3;
+}
+#calculator-body button[name="="]{
+  background-color:#ce6f10;
+}
+#calculator-body button[name="="]:active{
+  background-color:#a8590a;
+}
+#calculator-body #CE{
+  width:100px;
+  display:block;
+}
+@media screen and (max-width: 500px){
+.code-box{
+  width: 100%;
+  /* top: 100%; */
+  height: 100%;
+  bottom: 0;
+}
+.calculator-container{
+  width: 95%;
+  max-width: none;
+  order: 1;
+  max-height: 50%;
+}
+.code-icon{
+  top: 40%;
+  right: 5%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#tag-editor{
+  height: 90%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: start;
+}
+#tag-editor .container {
+width: 97%;
+margin-top: 10%;
+background-color: #f4f4f4;
+border: solid 1px #cccccc;
+padding: 5px 5px 5px 5px;
+transition: all 1s;
+}
+#tag-editor #input {
+padding-top: 2px;
+padding-bottom: 2px;
+display: flex;
+}
+#tag-editor input, #tag-editor .submit {
+display: inline-block;
+-webkit-appearance: none;
+margin-bottom: 5px;
+}
+#tag-editor .input {
+border: 1px solid lightgray;
+color: #005650;
+flex: 1 1 50%;
+font-family: "Open Sans", sans-serif;
+padding-left: 2px;
+}
+#tag-editor .submit {
+flex: 0 0 20  %;
+background-color: #ededed;
+border: 1px solid transparent;
+color: #005650;
+float: right;
+font-family: "Open Sans", sans-serif;
+}
+#tag-editor .task-list {
+max-height: 40vh;
+height: auto;
+overflow-y: auto;
+overflow-x: hidden;
+border-top: solid 1px #cccccc;
+padding-bottom: 10px;
+}
+#tag-editor .task-list ul {
+list-style: none;
+margin-bottom: 0;
+padding-left: 10px;
+}
+#tag-editor .task-list .item {
+background-color: #ededed;
+color: #303030;
+border-radius: 5px;
+float: left;
+margin: 2px 4px;
+padding: 1px 15px 0px 10px;
+position: relative;
+border: solid 1px #cccccc;
+line-height: 1.5rem;
+transform: translateY(-100%);
+opacity: 0;
+transition: all 0.4s ease;
+}
+.show-fade {
+  opacity: 1!important;
+  transform: translateY(0%)!important;
+}
+#tag-editor .task-list button {
+  padding: 0;
+background-color: white;
+border-radius: 50%;
+width: 15px;
+height: 15px;
+font-size: 0.5rem;
+border: solid 1px #cccccc;
+position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+top: -10px;
+right: -10px;
+}
+/* ::-webkit-scrollbar {
+width: 3px;
+background-color: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+background-color: #005650;
+}
+::-webkit-scrollbar-corner {
+background: transparent;
+} */

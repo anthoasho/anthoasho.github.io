@@ -19,6 +19,27 @@ window.smoothScroll = function(element){
       })
     }
   }
+
+
+function navigationScrollerClick(id, i){
+  console.log(this)
+  let hamburger = document.querySelector(".hamburger");
+    hamburger.classList.remove("close")
+    let horizontal = document.getElementById(id)
+    let vertical = document.getElementById(`${id}-${i}`)
+    let navArea = document.querySelector(".nav-button-area")
+    horizontal.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+    vertical.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+    this.parentNode.parentNode.classList.remove("nav-area-show")
+  }
+
+
 let content = document.getElementById("gallery");
 function inView(el){
   var sb = content.getBoundingClientRect();

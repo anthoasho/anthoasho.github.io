@@ -1,3 +1,15 @@
+/* Main Containers*/
+var body = document.getElementsByTagName("body")[0]
+let gallery = document.getElementById("gallery")
+let navContainer =  smartElement("div", body, "nav-container");
+let navButtonContainer = smartElement("div", navContainer, "nav-button-area nav-area-hide")
+navigation();
+makeLayoutFromArray(layoutArray)
+
+/* Element creator, mainly for setting type of element, its parent and any classNames
+  Extra attributes are added as an object
+*/
+
 function smartElement(type, parent, className, extraAttribute){
   let content = document.createElement(type);
   content.className = className;
@@ -7,112 +19,115 @@ function smartElement(type, parent, className, extraAttribute){
   }
   return content
 }
-var body = document.getElementsByTagName("body")[0]
-
-
-
-let gallery = document.getElementById("gallery")
-let navContainer =  smartElement("div", body, "nav-container");
-let navButton = smartElement("button", navContainer, "nav-button");
-let navIcon =  smartElement("div", navButton, "hamburger");
-for(let i = 0; i<3; i++){
-  smartElement("div", navIcon, "line")
-}
-let navButtonContainer = smartElement("div", navContainer, "nav-button-area nav-area-hide")
-navButton.addEventListener("click", function(){
-  let navArea = document.querySelector(".nav-button-area")
-  navButton.childNodes[0].classList.toggle("close")
-  console.log(navButton.childNodes)
-  navArea.classList.toggle("nav-area-show")
-  navArea.classList.toggle("nav-area-hide")
-  console.log(navIcon)
-})
-function makeLayoutFromArray(data){
-  let gallery = document.getElementById("gallery")
-  for(let i = 0; i < data.length; i++){
-    let panel = smartElement("div", gallery, "panel", {id:data[i].id})
-
-    let buttonContainer = smartElement("div", panel, "button-area")
-    smartElement("div", navButtonContainer, `nav-button-row ${data[i].id}`)
-    if(i === 0){
-      createButton("top", buttonContainer, "Top", "fa-arrow-up arrow-icon arrow-icon-prev")
-    }
-    if(i !== 0 ){
-      createButton( "previous", buttonContainer, "Back", "fa-arrow-up arrow-icon arrow-icon-prev")
-    }
-    if(i !==  (data.length-1)){
-      createButton(null, buttonContainer, "Next", "fa-arrow-down arrow-icon arrow-icon-prev")
-    }
-    if(i ===  (data.length-1)){
-      createButton( "top", buttonContainer, "Top", "fa-arrow-up arrow-icon arrow-icon-prev")
-    }
-    createPane(data[i].id, data[i].data);
-
+function navigation(parent){
+  let navButton = smartElement("button", navContainer, "nav-button");
+  let navIcon =  smartElement("div", navButton, "hamburger");
+  for(let i = 0; i<3; i++){
+    smartElement("div", navIcon, "line");
   }
-}
-function createButton(direction, parent,  text, icon){
-  let button = smartElement("button", parent, "button panel-button-next", {type: "button", innerText:text})
-    button.addEventListener("click", window.smoothScroll.bind(button, direction))
-    let iconStyle = smartElement("i", button, `fas ${icon}`)
-}
-function createPane(location, data, vertical){
-  let panel = document.getElementById(location);
-  let parent = smartElement("div", panel, "vertical")
-  data.forEach(function(element, i ){
-    let content = smartElement("div", parent, "content", {id: `${element.id}-${i}`})
-    let innerContent  = smartElement("div", content, "inner-content")
-    let navRow = document.querySelector(`.${element.id}`)
-    if(element.cornerGraphic){
-      let cornerGraphic = smartElement("div", innerContent, element.cornerGraphic.css)
-      let background = smartElement("img", cornerGraphic, null, {src: element.cornerGraphic.background})
-    }
-    if(i !==  (data.length-1)){
-      let nextButton = smartElement("div", content, "order-right")
-      createButton(null, nextButton, null, "fa-arrow-right")
-    }
-    if(i !== 0 ){
-      let prevButton = smartElement("div", content, "order-left")
-            createButton("previous", prevButton, null, "fa-arrow-left")
-    }
-    let information = smartElement("div", innerContent, "information")
-    let title = smartElement("h1", information, "title", {innerText: element.title})
-    let text = smartElement("p", information, "text", {innerHTML: element.text})
-    let navButton = smartElement("div", navRow, "nav-button-selector")
-    navButton.addEventListener("click",function(){
-      navIcon.classList.remove("close")
-      let horizontal = document.getElementById(element.id)
-      let vertical = document.getElementById(`${element.id}-${i}`)
-      let navArea = document.querySelector(".nav-button-area")
-      horizontal.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      })
-      vertical.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      })
-      navArea.classList.remove("nav-area-show")
-
-
-    })
-    let test = smartElement("p", navButton, null, {innerText: element.title})
-    console.log(element.title)
-    element.img  && smartElement("img", innerContent, null, {src: element.img.src, alt: element.img.alt})
-    if(element.scriptBox){
-      let loaderContainer = smartElement("div", innerContent, "loader-container")
-      for(let i = 0; i < element.scriptBox.length; i++){
-        let smallLoadingWithTitle = smartElement("div", loaderContainer, `loader-item-area`)
-        let smallLoading = smartElement("div", smallLoadingWithTitle, `loader-item ${element.scriptBox[i][0].parentClass}`)
-        insertScript(element.scriptBox[i], smallLoading);
-        smartElement("div", smallLoadingWithTitle, "loader-title", {innerText:element.scriptBox[i][0].title })
-      }
-    }
-
+  navButton.addEventListener("click", function(){
+    let navArea = document.querySelector(".nav-button-area");
+    navButton.childNodes[0].classList.toggle("close");
+    navArea.classList.toggle("nav-area-show");
+    navArea.classList.toggle("nav-area-hide");
   })
 }
-function insertScript(arr, parent){
-  for(let i = 0; i < arr.length; i++){
-    smartElement("div", parent, arr[i].className)
+function makeLayoutFromArray(data){
+  let gallery = document.getElementById("gallery");
+  for(let i = 0; i < data.length; i++){
+    let panel = smartElement("div", gallery, "panel", {id:data[i].id});
+    topBottomButtons(panel, data, i);
+    createPane(data[i].id, data[i].data);
   }
 }
-makeLayoutFromArray(layoutArray)
+//Clean all this up, so many variables it is hard to keep track. Try experimenting with putting all information into data.js
+function createPane(location, data, vertical){
+  let panel = document.getElementById(location);
+  let parent = smartElement("div", panel, "vertical");
+  data.forEach(function(element, i ){
+    let content = smartElement("div", parent, "content", {id: `${element.id}-${i}`});
+    let innerContent  = smartElement("div", content, "inner-content");
+    let navRow = document.querySelector(`.${element.id}`);
+    let information = smartElement("div", innerContent, "information");
+    let title = smartElement("h1", information, "title", {innerText: element.title});
+    let text = smartElement("p", information, "text", {innerHTML: element.text});
+    addCornerGraphic(element, content);
+    addSideButtons(content, i, data.length);
+    addNavButton(navRow, element, i);
+    element.img  && smartElement("img", innerContent, null, {src: element.img.src, alt: element.img.alt});
+    element.calculator && addCalculatorToContent(innerContent, information, element.calculator.code, calculator);
+    element.loaderBox && addLoaderBox(innerContent, element.loaderBox);
+    element.tagEditor &&  addCalculatorToContent(innerContent, information, element.tagEditor.code, tagEditor);
+    
+  })
+}
+
+function topBottomButtons(parent, dataArray, index){
+  let buttonContainer = smartElement("div", parent, "button-area");
+  smartElement("div", navButtonContainer, `nav-button-row ${dataArray[index].id}`);
+  index === 0 && createButton("top", buttonContainer, "Top", "fa-arrow-up arrow-icon arrow-icon-prev", window.smoothScroll,"button panel-button-next ");
+  index !== 0 && createButton( "previous", buttonContainer, "Back", "fa-arrow-up arrow-icon arrow-icon-prev", window.smoothScroll,"button panel-button-next ");
+  index !==  (dataArray.length-1) && createButton(null, buttonContainer, "Next", "fa-arrow-down arrow-icon arrow-icon-prev", window.smoothScroll, "button panel-button-next ");
+  index ===  (dataArray.length-1) &&  createButton( "top", buttonContainer, "Top", "fa-arrow-up arrow-icon arrow-icon-prev", window.smoothScroll, "button panel-button-next ");
+}
+
+function createButton(direction, parent,  text, icon, func, className ){
+  let button = smartElement("button", parent,  className, {type: "button", innerText:text})
+    button.addEventListener("click", func.bind(button, direction))
+    icon && smartElement("i", button, `fas ${icon}`)
+}
+
+function addCornerGraphic(element, parent){
+  if(element.cornerGraphic){
+    let cornerGraphic = smartElement("div", parent, element.cornerGraphic.css);
+    let background = smartElement("img", cornerGraphic, null, {src: element.cornerGraphic.background});
+  }
+}
+function addSideButtons(parent, index, arrayLength){
+  if(index !==  (arrayLength-1)){
+    let nextButton = smartElement("div", parent, "order-right");
+    createButton(null, nextButton, null, "fa-arrow-right", window.smoothScroll, "button panel-button-next ");
+  }
+  if(index !== 0 ){
+    let prevButton = smartElement("div", parent, "order-left");
+          createButton("previous", prevButton, null, "fa-arrow-left", window.smoothScroll, "button panel-button-next ");
+  }
+}
+function addCalculatorToContent(objectParent, codeAreaParent, code, func){
+  let calculatorContainer = smartElement("div", objectParent, "calculator-container");
+  func(calculatorContainer);
+  let codeArea = smartElement("div", codeAreaParent, "code-box no-opacity");
+  let codePre = smartElement("pre", codeArea);
+  let codeBox = smartElement("code", codePre, null, {innerText: code});
+  let showCodeButton =  createButton(null, calculatorContainer, "Code", null,  (function(){codeBoxVisibilityToggle.bind(this, codeArea)()}), "button code-icon" );
+}
+
+function addLoaderBox(parent, loaderBox){
+  let loaderContainer = smartElement("div", parent, "loader-container");
+  for(let i = 0; i < loaderBox.length; i++){
+    let smallLoadingWithTitle = smartElement("div", loaderContainer, `loader-item-area`);
+    let smallLoading = smartElement("div", smallLoadingWithTitle, `loader-item ${loaderBox[i][0].parentClass}`);
+    insertScript(loaderBox[i], smallLoading);
+    smartElement("div", smallLoadingWithTitle, "loader-title", {innerText:loaderBox[i][0].title });
+  }
+}
+function addTagEditor(){
+
+}
+function codeBoxVisibilityToggle(div) {
+  this.classList.toggle("selected") //button
+  for(let i = 0;  i < div.parentNode.childNodes.length; i++){
+    div.parentNode.childNodes[i].classList.toggle("no-opacity"); //codeBox and siblings
+  }
+}
+function addNavButton(parent, element, index){
+  let navButton = smartElement("div", parent, "nav-button-selector");
+  navButton.addEventListener("click", function(){navigationScrollerClick.bind(this, element.id, index)()});
+  let navButtonTitle = smartElement("p", navButton, null, {innerText: element.title});
+}
+
+function insertScript(arr, parent){
+  for(let i = 0; i < arr.length; i++){
+    smartElement("div", parent, arr[i].className);
+  }
+}

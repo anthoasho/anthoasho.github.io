@@ -1,234 +1,116 @@
 //convert
-function tagEditor(){
+function tagEditor(parent){
 
-var counter = 0;
+let counter = 0;
 
-
-
-/*HTML */
-// <div>
-//   <div id ="container">
-//      <form id = "input" onSubmit="dataInput()">
-//        <input id="information" class="input" type="text" placeholder="Input tag..." autocomplete="off" required>
-//           <input class="submit"  type="button" onClick="removeAll()" value="CLEAR ALL" >
-//        <input class="submit" type="submit" value="ENTER" >
+// <div id="tag-editor">
 //
-//     </form>
-//     <div class = "task-list">
-//         <ul class="list">
 //
-//         </ul>
+//     <div class="container">
+//        <form id = "input" onSubmit="tagEditorInput()">
+//          <input id="information" class="input" type="text" placeholder="Input tag..." autocomplete="off" required>
+//             <input class="submit"  type="button" onClick="removeAll()" value="CLEAR ALL" >
+//          <input class="submit" type="submit" value="ENTER" >
+//
+//       </form>
+//       <div class = "task-list">
+//           <ul class="list">
+//
+//           </ul>
+//       </div>
 //     </div>
-//   </div>
-//
-// </div>
-/*CSS*/
-//   body {
-//   background-color: #edfffe;
-//   font-size: 12px;
-//   font-family: "Open Sans", sans-serif;
-// }
-// #container {
-//   width: 400px;
-//   margin: auto;
-//   background-color: #f4f4f4;
-//   border: solid 1px #cccccc;
-//   padding: 5px 5px 0 5px;
-// }
-// #input {
-//   padding-top: 2px;
-//   padding-bottom: 2px;
-// }
-// input,
-// .submit {
-//   display: inline-block;
-//   -webkit-appearance: none;
-//   margin-bottom: 5px;
-//   /*   border: solid 1px  gray; */
-// }
-// .input {
-//   border: 1px solid lightgray;
-//   color: #005650;
-//   width: 58%;
-//   font-family: "Open Sans", sans-serif;
-//   padding-left: 2px;
-// }
-// .submit {
-//   width: 20%;
-//   background-color: #ededed;
-//   border: 1px solid transparent;
-//   color: #005650;
-//   float: right;
-//   font-family: "Open Sans", sans-serif;
-// }
-// .task-list {
-//   overflow: scroll;
-//   max-height: 120px;
-//   border-top: solid 1px #cccccc;
-//   padding: 0;
-// }
-// .task-list ul {
-//   list-style: none;
-//   margin-bottom: 0;
-//   padding-left: 10px;
-// }
-// .task-list li {
-//   background-color: #ededed;
-//   color: #303030;
-//   border-radius: 5px;
-//   float: left;
-//   margin: 2px;
-//   padding: 1px 15px 0px 10px;
-//   position: relative;
-//   border: solid 1px #cccccc;
-// }
-// .task-list button {
-//   background-color: white;
-//   border-radius: 20px;
-//   font-size: 50%;
-//   border: solid 1px #cccccc;
-//   position: absolute;
-//   padding: 2px 3px 2px 2px;
-//   top: 1px;
-//   right: 1px;
-// }
-// ::-webkit-scrollbar {
-//   width: 3px;
-//   background-color: #f4f4f4;
-// }
-// ::-webkit-scrollbar-thumb {
-//   background-color: #005650;
-// }
-// ::-webkit-scrollbar-corner {
-//   background: transparent;
-// }
-function dataInput() {
+//     </div>
+
+    let tagEditorHolder = smartElement("div", parent, null, {id:"tag-editor"});
+    let container = smartElement("div", tagEditorHolder, "container");
+    let form = smartElement("form", container, null, {id: "input", onsubmit: tagEditorInput})
+    let input = smartElement("input", form, "input", {id: "information", type: "text", placeholder:"Input tag...", autocomplete:"off", required: "true"})
+    let removeButton = smartElement("input", form, "submit", {type: "button", value: "CLEAR ALL"})
+    removeButton.addEventListener("click", removeAll)
+    let submitButton = smartElement("input", form, "submit", {type: "submit", value: "ENTER"})
+    let taskListContainer = smartElement("div", container, "task-list")
+    let taskListUl = smartElement("ul", taskListContainer, "list")
+function tagEditorInput() {
   event.preventDefault();
-  let input = $("#information").val();
-  console.log($input);
+  let inputBox = document.getElementById("information")
+
+  let input = inputBox.value
+  console.log(input);
 
  let i = counter;
   counter++;
-  $("ul.list").prepend($("<li>")
-                       .attr('id', 'test' + i)
-                       .text($input));
-  $("#test" + i ).append($("<button>")
-                              .attr('id', 'erase' + i)
-                              .text('x')
-                              .click(function(){$("#test" + i).fadeOut(200, function(){$(this).remove});})).hide().slideDown();
-    $("#information").val('').attr('placeholder', 'Input tag...');
-   console.log( counter);
+
+  let list = document.querySelector(".list")
+
+  let listItem = smartElement("li", list, "item", {id: `item-${i}`, innerText: input})
+  setTimeout(() => {  listItem.classList.add("show-fade")}, 10)
+
+  let deleteButton = smartElement("button", listItem, null, {id: `erase-${i}`, innerText: "x"})
+  deleteButton.addEventListener("click", function(){
+    listItem.classList.remove("show-fade");
+    setTimeout(()=> {
+      listItem.parentNode.removeChild(listItem)
+
+    }, 400)
+  })
+  inputBox.value = "";
+  inputBox.placeholder = "Input tag ... ";
  }
-
-
 function removeAll(){
-    for(k = 0; k < counter; k++){   $("#test" + k).slideUp(200, removeInd);}
-  counter = 0;
+    // for(k = 0; k < counter; k++){
+    let listItems = document.querySelectorAll("li")
+    console.log(counter)
+    var k = 0;
+    var timer = 50
+      delayedTimeout()
+     // $("#test" + k).slideUp(200, removeInd);
+     function delayedTimeout(){
+
+       setTimeout(()=>{
+       console.log(listItems)
+         listItems[k].classList.remove("show-fade");
+         k++
+
+         if (k<listItems.length){
+           delayedTimeout()
+         }
+         if(k>counter){
+           counter = 0;
+         }
+       }, timer)
+   }
+   setTimeout(()=>{
+     for(let i = 0; i < listItems.length; i++){
+       listItems[i].parentNode.removeChild(listItems[i]);
+     }
+   }, (timer * (1.5 *listItems.length)))
 }
 function removeInd(){
-  $(this).remove();
+  this.parentNode.removeChild(this);
 }
 }
 
-function calculator(){
+window.calculator = function(parent){
 
+//Calculator Design and event listeners
+let container = smartElement("div", parent, null, {id:"calculator-body"})
+let buttons = [["CE"], [7, 8, 9, "/"], [4, 5, 6, "x"], [1, 2, 3, "-"], [0, ".", "=", "+"]]
+  smartElement("input", container, null, {type: "text", id:"input", value:"0", disabled: "disabled"})
+for(let i = 0; i< buttons.length; i++){
+  let row = smartElement("div", container, "row")
+  let newButtons = buttons[i]
+  for(let k = 0; k < newButtons.length; k++){
+    let isFunctionKey = typeof newButtons[k] !== "number"
+    let button = smartElement("button", row, (isFunctionKey && "function"), {id: newButtons[k], innerText:  newButtons[k], name:newButtons[k]})
+    if(newButtons[k] !== "x"){
+      button.addEventListener("click", () => dataInput(newButtons[k]))
+    }else{
+      button.addEventListener("click",() => dataInput("*"))
+    }
+  }
+}
 
-/*HTML*/
-
-// <div id="calculator-body">
-//   <input type="text" disabled="disabled" id="input" value= "0">
-//
-//   <div class="row">
-//     <button id="CE" type="button" class= "function" name="CE"onClick="dataInput('CE')">CE</button>
-//   </div>
-//
-//   <div class="row">
-//                 <button id="7" type="button" name="7" onClick="dataInput(7)">7</button>
-//                 <button id="8" type="button" name="8" onClick="dataInput(8)">8</button>
-//                 <button id="9" type="button" name="9"onClick="dataInput(9)">9</button>
-//                 <button id="/" type="button" class= "function" name="/"onClick="dataInput('/')">/</button>
-//
-//               </div>
-//               <div class="row">
-//                 <button id="4" type="button" name="4" onClick="dataInput(4)">4</button>
-//                 <button id="5" type="button" name="5" onClick="dataInput(5)">5</button>
-//                 <button id="6" type="button" name="6"onClick="dataInput(6)">6</button>
-//                 <button id="x" type="button" class= "function" name="x"onClick="dataInput('*')">X</button>
-//               </div>
-//               <div class="row">
-//                 <button id="1" type="button" name="1"onClick="dataInput(1)">1</button>
-//                 <button id="2" type="button" name="2" onClick="dataInput(2)">2</button>
-//                 <button id="3" type="button" name="3" onClick="dataInput(3)">3</button>
-//                 <button type="button" class= "function" name="-"onClick="dataInput('-')">-</button>
-//               </div>
-//               <div class="row">
-//                 <button id="0" type="button" name="0" onClick="dataInput(0)">0</button>
-//                 <button id="." type="button" name="."onClick="dataInput('.')">.</button>
-//                 <button id="=" type="button"class= "function" name="="onClick="dataInput('=')">=</button>
-//                 <button id="+" type="button" class= "function" name="+"onClick="dataInput('+')">+</button>
-//                                    <!--<button id="C" type="button" class= "function" name="C"onClick="dataInput('C')">C</button> -->
-//               </div>
-//
-//
-//               </div>
-
-/* CSS */
-
-  //
-  // #calculator-body{
-  //   width: 250px;
-  //   height: 425px;
-  //   background-color:#dbdbdb;
-  //   border: 1px solid #a5a5a5;
-  //   margin:auto;
-  // }
-  // #input{
-  //   width:220px;
-  //   margin: 10px 0 0 12px;
-  //   height:50px;
-  //   text-align: right;
-  //   font-size:35px;
-  // }
-  // .row{
-  //   height: 60px;
-  //   width:250px;
-  //   padding:10px 0 0 10px;
-  // }
-  // button{
-  //   width: 50px;
-  //   height:90%;
-  //   margin: 2px;
-  //   border: #a5a5a5 solid 1px;
-  //   font-family: 'Mukta Malar', sans-serif;
-  //   font-size: 20px;
-  //   outline:none;
-  //
-  // }
-  // button:active{
-  //   background-color:#c5e0dc;
-  //   transition: 0.2s;
-  // }
-  // .function{
-  //   background-color:#a5a5a5;
-  // }
-  // .function:active{
-  //   background-color: #92aaa3;
-  // }
-  // button[name="="]{
-  //   background-color:#ce6f10;
-  // }
-  // button[name="="]:active{
-  //   background-color:#a8590a;
-  // }
-  // #CE{
-  //   width:100px;
-  //   margin-left: auto;
-  //   margin-right: 25px;
-  //   display:block;
-  //
-  // }
-
-
+//Calculator Code
   //First attempt at a Javascript project
 let inputDataTotal = [];
 let inputDataShow = [];
@@ -293,7 +175,7 @@ function dataInput(input){
 
 }
 
-function randomUser(){
+// function randomUser(){
 
 /*HTML */
 
@@ -400,26 +282,26 @@ function randomUser(){
 // }
 
 // Convert to vanilla JS
-var url = "https://randomuser.me/api";
- randomUser();
-
-$("#next").click(function(){
-  randomUser();
-  $(".profile").addClass("active").delay(150).queue(function( next ){
-    $(this).removeClass('active');
-    next();})
-});
-
-
-function randomUser(){
-    $.getJSON(url)
-  .done(function(data){
-    var information = data.results[0];
-    $("#name").text(information.name.first + ' ' + information.name.last)
-    $("#username").text(information.login.username);
-    $("#email").text(information.email);
-    $("#city").text(information.location.city);
-    $("#pro-pic").attr("src", information.picture.large);
-  });
-}
-}
+// var url = "https://randomuser.me/api";
+//  randomUser();
+//
+// $("#next").click(function(){
+//   randomUser();
+//   $(".profile").addClass("active").delay(150).queue(function( next ){
+//     $(this).removeClass('active');
+//     next();})
+// });
+//
+//
+// function randomUser(){
+//     $.getJSON(url)
+//   .done(function(data){
+//     var information = data.results[0];
+//     $("#name").text(information.name.first + ' ' + information.name.last)
+//     $("#username").text(information.login.username);
+//     $("#email").text(information.email);
+//     $("#city").text(information.location.city);
+//     $("#pro-pic").attr("src", information.picture.large);
+//   });
+// }
+// }
