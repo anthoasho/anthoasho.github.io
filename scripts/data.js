@@ -16,13 +16,34 @@ const Morikin = {
         }
       },
       { id: "morikin",
-        title: "Morikin",
-        text: "hello again",
+        title: "MERN",
+        text:
+        `Morikin uses the MERN stack (Mongo, Express, React, Node).
+        The front end is rendered client side with backend handling the API only.
+        `,
+        img: {
+          src: "public/images/3.JPG",
+          alt: "code picture"
+        },
+      },
+      { id: "morikin",
+        title: "Mobile",
+        text: "Built with a responsive design.",
+        img: {
+          src: "public/images/3.JPG",
+          alt: "code picture"
+        },
+      },
+      { id: "morikin",
+        title: "Designs",
+        text:
+        `Custom animations built from the ground up
+        Fluid input box
+        `,
         img: {
           src: "public/images/3.JPG",
           alt: "code picture"
         }
-
       }]
 }
 const jsStudy = {
@@ -117,16 +138,16 @@ const jsStudy = {
       text: `Knowing the importance of APIs in modern web, it was important to get an understanding of APIs. This was a small widget that would fetch from <a href="https://randomuser.me/api">randomuser.me/api</a>.
             Despite using jQuery as the method of fetching here, I have since preferred to use Axios.js.
       `,
-      img: {
-        src: "public/images/1.JPG",
-        alt: "code picture"
+      fetcher:{
+        code: ""
       }
 }]
 }
 
 const AboutMe = {
   id: "about",
-  data:[{
+  data:[
+    {
       id: "about",
       title: "Me",
       text: `
@@ -136,8 +157,8 @@ const AboutMe = {
         src: "public/images/2.JPG",
         alt: "Photo of Anthony"
       }
-  },
-  {
+    },
+    {
       id: "about",
       title: "Education",
       text: `
@@ -148,7 +169,32 @@ const AboutMe = {
         src: "public/images/2.JPG",
         alt: "Photo of Anthony"
       }
-  }]
+    },
+    {
+      id: "about",
+      title: "Work",
+      text: `
+      Following graduation I have spent 3 years working as an English Teacher within Japan.
+      It has given me the chance to grow accustomed to both Japanese business culture and intercultural communication.
+      `,
+      img:{
+        src: "public/images/2.JPG",
+        alt: "Photo of Anthony"
+      }
+    },
+    {
+      id: "about",
+      title: "Fun",
+      text: `
+      I am passionate about keeping my mind and body active, so in addition to studying in my free time I have a number of hobbies.
+      With a desire to always try new things I have spent years practicing magic to perform to friends and strangers alike. I love being creative in my magic and thinking of new ideas, this has also helped my love for playing guitar and photography.
+      `,
+      img:{
+        src: "public/images/2.JPG",
+        alt: "Photo of Anthony"
+      }
+    }
+]
 }
 
 

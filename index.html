@@ -10,9 +10,16 @@
     <link rel="stylesheet" href="iconloader.css">
 
   </head>
-  <body>
 
-    <div class="introduction">
+    <body>
+
+    <div id="loader">
+      <div class="inner-loader">
+      <div class="loader-two"></div>
+      <div class="loader-two"></div>
+    </div>
+    </div>
+    <div class="introduction hidden">
       <div class="bg "></div>
       <div class="landing">
         <p class="intro-title fixed">Welcome</p>
@@ -21,7 +28,12 @@
     </div>
     <div id="gallery" class="gallery">
     </div>
-    <svg id="testing-svg" height="0" >
+    <div class="nav-container"> </div>
+    <script src="scripts/projects.js" type="text/javascript" ></script>
+    <script src="scripts/actions.js" charset="utf-8"></script>
+    <script src="scripts/data.js" type="text/javascript" ></script>
+    <script src="scripts/layout.js" type="text/javascript" ></script>
+    <svg id="testing-svg" height="0" display="none">
       <defs>
         <filter id="goo" x="-100%" y="-100%"height="500%" width="500%">
           <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -30,11 +42,5 @@
         </filter>
       </defs>
     </svg>
-
-    <script src="scripts/projects.js" type="text/javascript" ></script>
-    <script src="scripts/actions.js" charset="utf-8"></script>
-    <script src="scripts/data.js" type="text/javascript" ></script>
-    <script src="scripts/layout.js" type="text/javascript" ></script>
   </body>
-
 </html>

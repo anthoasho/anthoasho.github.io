@@ -3,9 +3,18 @@ var body = document.getElementsByTagName("body")[0]
 let gallery = document.getElementById("gallery")
 let navContainer =  smartElement("div", body, "nav-container");
 let navButtonContainer = smartElement("div", navContainer, "nav-button-area nav-area-hide")
-navigation();
-makeLayoutFromArray(layoutArray)
-
+window.onload = function(){
+  setTimeout(function(){
+  navigation();
+  makeLayoutFromArray(layoutArray)
+  document.querySelector(".hidden").style.display = "flex";
+  let loader =   document.getElementById("loader")
+  loader.style.opacity = "0";
+  setTimeout(function(){
+    loader.style.display = "none";
+  }, 2000)
+}, 1000)
+}
 /* Element creator, mainly for setting type of element, its parent and any classNames
   Extra attributes are added as an object
 */
@@ -58,7 +67,7 @@ function createPane(location, data, vertical){
     element.calculator && addCalculatorToContent(innerContent, information, element.calculator.code, calculator);
     element.loaderBox && addLoaderBox(innerContent, element.loaderBox);
     element.tagEditor &&  addCalculatorToContent(innerContent, information, element.tagEditor.code, tagEditor);
-    
+    element.fetcher && addCalculatorToContent(innerContent, information, element.fetcher.code, randomUserFetcher)
   })
 }
 
@@ -111,9 +120,7 @@ function addLoaderBox(parent, loaderBox){
     smartElement("div", smallLoadingWithTitle, "loader-title", {innerText:loaderBox[i][0].title });
   }
 }
-function addTagEditor(){
 
-}
 function codeBoxVisibilityToggle(div) {
   this.classList.toggle("selected") //button
   for(let i = 0;  i < div.parentNode.childNodes.length; i++){

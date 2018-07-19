@@ -1,6 +1,7 @@
 body{
   margin: 0;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 body, html{
   height: 100%;
@@ -52,6 +53,7 @@ body, html{
   background: url("public/images/background.jpg") no-repeat 10% bottom fixed;
   animation: fadeIn 3s ease forwards;
   opacity: 0;
+  overflow: auto;
   filter: blur(2px) contrast(200%) grayscale(40%) saturate(50%) opacity(0.4);
 }
 .landing{
@@ -75,7 +77,8 @@ body, html{
   text-shadow: 0px 1px 1px black;
 }
 #morikin .vertical .content img{
-  filter: blur(1px);
+  filter: none;
+  border: 5px solid white;
 }
 .vertical{
   display: flex;
@@ -265,18 +268,52 @@ body, html{
     right: 50%;
   }
   20%{
-    width: 30vw;
+    min-width: 30vw;
     height: 10px;
     right: 150%;
   }
   80%{
-    width: 30vw;
+    min-width: 30vw;
     height: 10px;
   }
   100%{
+    min-width: 30vw;
     height: 50vh;
   }
 
+}
+#loader{
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.inner-loader{
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.inner-loader .loader-two, .inner-loader .loader-two::before, .inner-loader .loader-two::after{
+
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid #3f3f3f;
+  border-bottom: 3px solid #3f3f3f;
+  animation: circle 3s  infinite both cubic-bezier(0.375, 0.885, 1.0, 0.9);
+
+}
+.hidden{
+  display: none;
 }
 .hamburger {
   width: 32px;
@@ -323,7 +360,7 @@ body, html{
 .nav-button-row{
   display: flex;
   flex: 1 1 15%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   opacity: 0;
   visibility: hidden;
@@ -348,7 +385,7 @@ body, html{
   height: 70%;
   margin: 3px;
   cursor: pointer;
-  color: #373737;
+  color: #575757;
   text-shadow: 0px 1px 0 #eeeeeeaa, 1px -1px 1px #00000010;
   text-align: center;
   text-transform: uppercase;
@@ -360,8 +397,12 @@ body, html{
   justify-content: center;
   transition: 0.4s linear ;
 }
+.nav-button-selector:nth-of-type(1){
+  color: #373737;
+
+}
 .nav-button-selector:hover{
-  background: #383838;
+  background: #181818;
   color: white;
     text-shadow: 0px 1px 0 #00000010, 1px -1px 1px #00000010;
 }
@@ -408,7 +449,7 @@ body, html{
   min-width: 0;
 
 }
-.panel img{
+.panel  img{
   width: 40%;
   filter: grayscale(100%);
 }
@@ -444,6 +485,7 @@ body, html{
 .background-logo{
   position: absolute;
   right:-10%;
+  bottom: 10%;
   width: 50%;
   filter: invert(90%);
   transform: rotate(-25deg);
@@ -523,7 +565,10 @@ body, html{
   font-size: 0.9rem;
   white-space: pre-line;
   transition: 1s ease;
-  flex: 1 1;
+  flex: 1 1 40%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
 }
 
 .panel:nth-of-type(odd) .information{
@@ -635,7 +680,7 @@ body, html{
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    transform-origin: top right;
+    /* transform-origin: top right; */
     background: white;
     padding-bottom: -2px;
     z-index: -1;
