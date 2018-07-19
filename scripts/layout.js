@@ -19,6 +19,8 @@ window.onload = function(){
   Extra attributes are added as an object
 */
 
+
+
 function smartElement(type, parent, className, extraAttribute){
   let content = document.createElement(type);
   content.className = className;
@@ -63,7 +65,7 @@ function createPane(location, data, vertical){
     addCornerGraphic(element, content);
     addSideButtons(content, i, data.length);
     addNavButton(navRow, element, i);
-    element.img  && smartElement("img", innerContent, null, {src: element.img.src, alt: element.img.alt});
+    element.img  && smartElement("img", innerContent, "panel-image", {src: element.img.src, alt: element.img.alt});
     element.calculator && addCalculatorToContent(innerContent, information, element.calculator.code, calculator);
     element.loaderBox && addLoaderBox(innerContent, element.loaderBox);
     element.tagEditor &&  addCalculatorToContent(innerContent, information, element.tagEditor.code, tagEditor);

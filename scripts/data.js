@@ -7,7 +7,7 @@ const Morikin = {
         It is a basic social Network built in react.
         Find the code at my <a href='http://github.com/anthoasho'> Github </a>`,
         img: {
-          src: "public/images/3.JPG",
+          src: "public/images/morikin-home.png",
           alt: "code picture"
         },
         cornerGraphic:{
@@ -22,7 +22,7 @@ const Morikin = {
         The front end is rendered client side with backend handling the API only.
         `,
         img: {
-          src: "public/images/3.JPG",
+          src: "public/images/login.png",
           alt: "code picture"
         },
       },
@@ -30,7 +30,7 @@ const Morikin = {
         title: "Mobile",
         text: "Built with a responsive design.",
         img: {
-          src: "public/images/3.JPG",
+          src: "public/images/mobile.png",
           alt: "code picture"
         },
       },
@@ -41,7 +41,7 @@ const Morikin = {
         Fluid input box
         `,
         img: {
-          src: "public/images/3.JPG",
+          src: "public/images/sidebar.png",
           alt: "code picture"
         }
       }]
