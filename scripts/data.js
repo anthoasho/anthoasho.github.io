@@ -243,5 +243,5 @@ const Designs = {
 
 ]
 }
-
-let layoutArray = [opening, Morikin, jsStudy, Designs, AboutMe]
+// TODO add 'jsStudy' variable to the layoutArray to generate that page.
+let layoutArray = [opening,  Morikin, Designs,AboutMe]

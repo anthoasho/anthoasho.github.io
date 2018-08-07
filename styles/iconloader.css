@@ -360,7 +360,7 @@ z-index: -1;
 filter: ("#goo")
 }
 .loader-three::after{
-  content:  url("public/images/morikin.svg");
+  content:  url("../public/images/morikin.svg");
   width: 50%;
   height: 50%;
   position: absolute;
