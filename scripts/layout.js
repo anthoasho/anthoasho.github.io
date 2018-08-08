@@ -7,6 +7,7 @@ window.onload = function(){
   setTimeout(function(){
   navigation();
   makeLayoutFromArray(layoutArray)
+  codePenEmbed();
   document.querySelector(".hidden").style.display = "flex";
   let loader =   document.getElementById("loader")
   loader.style.opacity = "0";
@@ -52,7 +53,7 @@ function makeLayoutFromArray(data){
   }
 }
 //Clean all this up, so many variables it is hard to keep track. Try experimenting with putting all information into data.js
-function createPane(location, data, vertical){
+function createPane(location, data){
   let panel = document.getElementById(location);
   let parent = smartElement("div", panel, "vertical");
   data.forEach(function(element, i ){
@@ -66,10 +67,14 @@ function createPane(location, data, vertical){
     addSideButtons(content, i, data.length);
     addNavButton(navRow, element, i);
     element.img  && smartElement("img", innerContent, "panel-image", {src: element.img.src, alt: element.img.alt});
-    element.calculator && addCalculatorToContent(innerContent, information, element.calculator.code, calculator);
     element.loaderBox && addLoaderBox(innerContent, element.loaderBox);
-    element.tagEditor &&  addCalculatorToContent(innerContent, information, element.tagEditor.code, tagEditor);
-    element.fetcher && addCalculatorToContent(innerContent, information, element.fetcher.code, randomUserFetcher)
+    element.codepen && codePenInsertor(element.codepen, innerContent);
+    element.codepen && text.classList.add("mobile-hidden")
+    // element.calculator && addCalculatorToContent(innerContent, information, element.calculator.code, calculator);
+    // element.tagEditor &&  addCalculatorToContent(innerContent, information, element.tagEditor.code, tagEditor);
+    // element.tagEditor && codePenInsertor("GyWbyR", innerContent)
+    // element.fetcher && codePenInsertor("YeNovr", innerContent);
+    // element.fetcher && addCalculatorToContent(innerContent, information, element.fetcher.code, randomUserFetcher)
   })
 }
 
@@ -104,14 +109,16 @@ function addSideButtons(parent, index, arrayLength){
           createButton("previous", prevButton, null, "fa-arrow-left", window.smoothScroll, "button panel-button-next ");
   }
 }
-function addCalculatorToContent(objectParent, codeAreaParent, code, func){
-  let calculatorContainer = smartElement("div", objectParent, "calculator-container");
-  func(calculatorContainer);
-  let codeArea = smartElement("div", codeAreaParent, "code-box no-opacity");
-  let codePre = smartElement("pre", codeArea);
-  let codeBox = smartElement("code", codePre, null, {innerText: code});
-  let showCodeButton =  createButton(null, calculatorContainer, "Code", null,  (function(){codeBoxVisibilityToggle.bind(this, codeArea)()}), "button code-icon" );
-}
+// function addCalculatorToContent(objectParent, codeAreaParent, code, func){
+//   let calculatorContainer = smartElement("div", objectParent, "calculator-container");
+//   func(calculatorContainer);
+//   let codeArea = smartElement("div", codeAreaParent, "code-box no-opacity");
+//   let codePre = smartElement("pre", codeArea);
+//   let codeBox = smartElement("code", codePre, null, {innerText: code});
+//   let showCodeButton =  createButton(null, calculatorContainer, "Code", null,  (function(){codeBoxVisibilityToggle.bind(this, codeArea)()}), "button code-icon" );
+//
+//
+// }
 
 function addLoaderBox(parent, loaderBox){
   let loaderContainer = smartElement("div", parent, "loader-container");

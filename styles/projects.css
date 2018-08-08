@@ -1,3 +1,13 @@
+.codepen-container{
+  height: 95%;
+  flex: 1 auto;
+  margin: 10px;
+}
+.cp_embed_wrapper, .cp_embed_wrapper iframe{
+  height: 100%;
+}
+
+/*
 .calculator-container{
   box-shadow: inset 2px 2px 3px  #00000022, 1px 1px 1px #eeeeee11  ;
   padding: 14px;
@@ -27,8 +37,6 @@
   padding-left: 10px;
   transition: all 1s ease;
   opacity: 1;
-  /* display: none; */
-  /* pointer-events: none; */
 }
 .code-box .no-opacity{
   pointer-events: none;
@@ -36,7 +44,6 @@
 }
 .code-show{
   opacity: 1;
-  /* display: flex; */
 }
 .code-icon{
   transition: all 1s ease;
@@ -110,11 +117,10 @@
 #calculator-body #CE{
   width:100px;
   display:block;
-}
-@media screen and (max-width: 500px){
+} */
+/* @media screen and (max-width: 500px){
 .code-box{
   width: 100%;
-  /* top: 100%; */
   height: 100%;
   bottom: 0;
 }
@@ -229,11 +235,11 @@ justify-content: center;
 align-items: center;
 top: -10px;
 right: -10px;
-}
+} */
 
 
 /* Fetch User API*/
-
+/*
 #fetch .fetch-container {
   display: flex;
   flex-direction:column;
@@ -322,4 +328,4 @@ transform: translate(-50%, -50%);
 
 #fetch .name {
   color: #00bc3e;
-}
+} */

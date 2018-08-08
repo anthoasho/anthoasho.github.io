@@ -50,7 +50,7 @@ body, html{
   right: 0;
   bottom: 0;
   z-index: -1;
-  background: url("public/images/background.jpg") no-repeat 10% bottom fixed;
+  background: url("../public/images/background.jpg") no-repeat 10% bottom fixed;
   animation: fadeIn 3s ease forwards;
   opacity: 0;
   overflow: auto;
@@ -552,12 +552,13 @@ body, html{
   background: #fefefe;
 }
 .information{
-  flex: 0 1 50%;
+  flex: 0 1 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  order:1;
+  order: 1;
   height: 95%;
+  /* padding: 20px; */
 }
 .no-opacity{
   opacity: 0!important;
@@ -569,7 +570,7 @@ body, html{
 }
 .text{
   line-height: 2rem;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   white-space: pre-line;
   transition: 1s ease;
   flex: 1 1 40%;
@@ -600,9 +601,6 @@ body, html{
     font-size: 0.6rem;
     justify-content: flex-start;
     box-sizing: border-box;
-  }
-  .inner-content{
-    max-height: 90%;
   }
   .content .button{
     order: 3!important;
@@ -639,13 +637,18 @@ body, html{
     flex-direction: column;
     justify-content: center;
     justify-self: flex-start;
-    height: auto;
+    max-height: 90%;
+    height: 90%;
   }
   .background-image{
     bottom: -10%;
   }
   .vertical{
     height: 100%;
+  }
+  #js-study {
+    /* height: auto;
+    min-height: 100vh; */
   }
   .panel img, .content .panel-image{
     width: 100%;
@@ -665,6 +668,9 @@ body, html{
     margin: 0 auto;
     /* margin-bottom: 2.5rem; */
     justify-content:flex-start;
+  }
+  .mobile-hidden{
+    display: none;
   }
   .title{
     margin: 1rem auto;
