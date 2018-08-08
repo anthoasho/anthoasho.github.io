@@ -68,14 +68,6 @@ body, html{
   opacity: 0;
   text-align: center;
 }
-/* #morikin{
-  background-image: radial-gradient(circle closest-corner, #00c6fbf0, #005beaf0);
-  background-size: cover;
-}
-#morikin .title{
-  color: white;
-  text-shadow: 0px 1px 1px black;
-}*/
 #morikin .vertical .content .panel-image{
   filter: none;
   border: 1px solid  #44444444;
@@ -178,9 +170,7 @@ body, html{
   position: absolute;
   top: 25%;
   right: 10%;
-  transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
-  font-weight: 200;
-  text-shadow: 1px 1px 1px #ffffff;
+  transition: transform 0.3s linear, opacity 0.1s 0.1s linear;
   z-index: 3;
   opacity: 0;
 }

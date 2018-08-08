@@ -22,7 +22,6 @@ window.smoothScroll = function(element){
 
 
 function navigationScrollerClick(id, i){
-  console.log(this)
   let hamburger = document.querySelector(".hamburger");
     hamburger.classList.remove("close")
     let horizontal = document.getElementById(id)
@@ -41,11 +40,11 @@ function navigationScrollerClick(id, i){
 
 
 let content = document.getElementById("gallery");
-function inView(el){
-  var sb = content.getBoundingClientRect();
-  var eb = el.getBoundingClientRect();
-  let test = window.innerHeight*0.7;
-  return !((eb.top + eb.height < 0) || (eb.top > test))
+function inView(element){
+  // var contentBoundary = content.getBoundingClientRect();
+  var elementBoundary = element.getBoundingClientRect();
+  let showArea = window.innerHeight*0.7;
+  return !((elementBoundary.top + elementBoundary.height < 0) || (elementBoundary.top > showArea))
 }
 function updateInView(){
   for(x of document.querySelectorAll(".panel")){
