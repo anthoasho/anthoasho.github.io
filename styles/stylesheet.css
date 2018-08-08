@@ -652,10 +652,13 @@ body, html{
     min-height: 100vh; */
   }
   .panel img, .content .panel-image{
-    width: 100%;
-    max-width: 100%;
+    max-width: 85%;
+    max-height: 50%;
     filter: grayscale(100%);
     order: 1!important;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: relative;
   }
   .title{
     margin: 0 auto;
