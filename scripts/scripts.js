@@ -38,7 +38,6 @@ function orderedIntro(){
   for(var item in animateList){
     timeout(animateList[item].node, animateList[item].timing)
   }
-  setTimeout(() => introDelayedAnimation(nav, 300, "animate"), 3000)
 }
 function timeout(obj, timing){
   setTimeout(function(){
