@@ -91,11 +91,14 @@ opacity: 0;
 margin: 20px;
 position: relative;
 }
+#home h2.animate{
+  transition: all 4s ease-in-out!important;
+  
+}
 #home h2{
 /* transform: translateY(-20px); */
 background-color: #b1b1b1;
 opacity: 0;
-transition: all 4s ease-in-out!important;
 text-align: center;
 color: transparent;
 text-shadow: -2px 2px  3px rgba(255, 255, 255, 0.5);
