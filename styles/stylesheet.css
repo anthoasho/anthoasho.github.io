@@ -132,16 +132,6 @@ background-image: linear-gradient(to right, var(--white), #016d59, var(--white))
 animation-name: fadeIn;
 transition: all 2s ease-in;
 }
-.bottom-br::after{
-content:"";
-width:100%;
-height:1px;
-background: pink;
-position: absolute;
-bottom: 0;
-background-image: linear-gradient(to right, var(--white), gray, var(--white));
-z-index: 1;
-}
 .relative-pos{
 position: relative;
 }
