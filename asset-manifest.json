@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.d6a6792c.chunk.css",
-    "main.js": "/static/js/main.b2ffa637.chunk.js",
-    "main.js.map": "/static/js/main.b2ffa637.chunk.js.map",
+    "main.js": "/static/js/main.6aeff5c9.chunk.js",
+    "main.js.map": "/static/js/main.6aeff5c9.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a2086642.js",
     "runtime~main.js.map": "/static/js/runtime~main.a2086642.js.map",
     "static/js/2.7b5dc24c.chunk.js": "/static/js/2.7b5dc24c.chunk.js",
     "static/js/2.7b5dc24c.chunk.js.map": "/static/js/2.7b5dc24c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.41c15a92714bca3ea3efd48e12ad9a0d.js": "/precache-manifest.41c15a92714bca3ea3efd48e12ad9a0d.js",
+    "precache-manifest.a96fb6792316e04dd8a92806359ad654.js": "/precache-manifest.a96fb6792316e04dd8a92806359ad654.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.d6a6792c.chunk.css.map": "/static/css/main.d6a6792c.chunk.css.map",
     "static/media/clock.png": "/static/media/clock.af67f564.png",
