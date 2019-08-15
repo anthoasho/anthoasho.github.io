@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a8aadf48.chunk.css",
+    "main.js": "/static/js/main.9eaaeb8c.chunk.js",
+    "main.js.map": "/static/js/main.9eaaeb8c.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a2086642.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a2086642.js.map",
+    "static/js/2.5078075b.chunk.js": "/static/js/2.5078075b.chunk.js",
+    "static/js/2.5078075b.chunk.js.map": "/static/js/2.5078075b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1bf767e710cd9288f8d60a80b52e4dd0.js": "/precache-manifest.1bf767e710cd9288f8d60a80b52e4dd0.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.a8aadf48.chunk.css.map": "/static/css/main.a8aadf48.chunk.css.map",
+    "static/media/clock.png": "/static/media/clock.af67f564.png",
+    "static/media/css3.svg": "/static/media/css3.3707da3c.svg",
+    "static/media/durham.svg": "/static/media/durham.b0727a5a.svg",
+    "static/media/graduate.svg": "/static/media/graduate.926fc517.svg",
+    "static/media/html5.svg": "/static/media/html5.676e8188.svg",
+    "static/media/jcamp.png": "/static/media/jcamp.4e51436d.png",
+    "static/media/jquery.svg": "/static/media/jquery.80639bbf.svg",
+    "static/media/lightsout.png": "/static/media/lightsout.65d3b011.png",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg",
+    "static/media/mongodb.svg": "/static/media/mongodb.2985235d.svg",
+    "static/media/morikin.png": "/static/media/morikin.2369213f.png",
+    "static/media/nodejs.svg": "/static/media/nodejs.cc2b3aaf.svg",
+    "static/media/profile.png": "/static/media/profile.9deae8fb.png",
+    "static/media/rgb-game.png": "/static/media/rgb-game.2a314091.png",
+    "static/media/socialme.jpg": "/static/media/socialme.93c11b64.jpg"
+  }
+}
