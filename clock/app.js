@@ -28,7 +28,7 @@ function update(){
 }
 function init(){
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.height = window.innerHeight-60;
   clock = new Clock(150, clockWidth, ctx);
   minutes = new Arm("#98d590", clock.radius*0.8, hoursWidth);
   hours = new Arm("#98d590", clock.radius*0.5, minutesWidth);
