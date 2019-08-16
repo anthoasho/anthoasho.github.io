@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/rgb-game/static/css/main.37b63f46.chunk.css",
-    "main.js": "/rgb-game/static/js/main.52ff5947.chunk.js",
-    "main.js.map": "/rgb-game/static/js/main.52ff5947.chunk.js.map",
-    "runtime~main.js": "/rgb-game/static/js/runtime~main.a2518df0.js",
-    "runtime~main.js.map": "/rgb-game/static/js/runtime~main.a2518df0.js.map",
-    "static/js/2.75832e6e.chunk.js": "/rgb-game/static/js/2.75832e6e.chunk.js",
-    "static/js/2.75832e6e.chunk.js.map": "/rgb-game/static/js/2.75832e6e.chunk.js.map",
-    "index.html": "/rgb-game/index.html",
-    "precache-manifest.909907e29b7e1f7be8451a94a37a2b62.js": "/rgb-game/precache-manifest.909907e29b7e1f7be8451a94a37a2b62.js",
-    "service-worker.js": "/rgb-game/service-worker.js",
-    "static/css/main.37b63f46.chunk.css.map": "/rgb-game/static/css/main.37b63f46.chunk.css.map",
-    "static/media/logo.svg": "/rgb-game/static/media/logo.5d5d9eef.svg"
+    "main.css": "/lights-out/static/css/main.37b63f46.chunk.css",
+    "main.js": "/lights-out/static/js/main.b9e285da.chunk.js",
+    "main.js.map": "/lights-out/static/js/main.b9e285da.chunk.js.map",
+    "runtime~main.js": "/lights-out/static/js/runtime~main.69e4817a.js",
+    "runtime~main.js.map": "/lights-out/static/js/runtime~main.69e4817a.js.map",
+    "static/js/2.10f59814.chunk.js": "/lights-out/static/js/2.10f59814.chunk.js",
+    "static/js/2.10f59814.chunk.js.map": "/lights-out/static/js/2.10f59814.chunk.js.map",
+    "index.html": "/lights-out/index.html",
+    "precache-manifest.adc5d228c82e5dc81f8fe18a14b8abe6.js": "/lights-out/precache-manifest.adc5d228c82e5dc81f8fe18a14b8abe6.js",
+    "service-worker.js": "/lights-out/service-worker.js",
+    "static/css/main.37b63f46.chunk.css.map": "/lights-out/static/css/main.37b63f46.chunk.css.map",
+    "static/media/logo.svg": "/lights-out/static/media/logo.5d5d9eef.svg"
   }
 }
