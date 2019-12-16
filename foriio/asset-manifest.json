@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.68eac4b0.chunk.css",
-    "main.js": "/static/js/main.f7a2c983.chunk.js",
-    "main.js.map": "/static/js/main.f7a2c983.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7a08750c.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7a08750c.js.map",
-    "static/js/2.aecce363.chunk.js": "/static/js/2.aecce363.chunk.js",
-    "static/js/2.aecce363.chunk.js.map": "/static/js/2.aecce363.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.89221d55e46ee6e2001b2708dc2eb85c.js": "/precache-manifest.89221d55e46ee6e2001b2708dc2eb85c.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.68eac4b0.chunk.css.map": "/static/css/main.68eac4b0.chunk.css.map",
-    "static/js/2.aecce363.chunk.js.LICENSE": "/static/js/2.aecce363.chunk.js.LICENSE"
+    "main.css": "/foriio/static/css/main.68eac4b0.chunk.css",
+    "main.js": "/foriio/static/js/main.14f0bf44.chunk.js",
+    "main.js.map": "/foriio/static/js/main.14f0bf44.chunk.js.map",
+    "runtime-main.js": "/foriio/static/js/runtime-main.d93c6ca4.js",
+    "runtime-main.js.map": "/foriio/static/js/runtime-main.d93c6ca4.js.map",
+    "static/js/2.aecce363.chunk.js": "/foriio/static/js/2.aecce363.chunk.js",
+    "static/js/2.aecce363.chunk.js.map": "/foriio/static/js/2.aecce363.chunk.js.map",
+    "index.html": "/foriio/index.html",
+    "precache-manifest.f4478eba368cabc18c30a6df1f1d38b0.js": "/foriio/precache-manifest.f4478eba368cabc18c30a6df1f1d38b0.js",
+    "service-worker.js": "/foriio/service-worker.js",
+    "static/css/main.68eac4b0.chunk.css.map": "/foriio/static/css/main.68eac4b0.chunk.css.map",
+    "static/js/2.aecce363.chunk.js.LICENSE": "/foriio/static/js/2.aecce363.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.7a08750c.js",
+    "static/js/runtime-main.d93c6ca4.js",
     "static/js/2.aecce363.chunk.js",
     "static/css/main.68eac4b0.chunk.css",
-    "static/js/main.f7a2c983.chunk.js"
+    "static/js/main.14f0bf44.chunk.js"
   ]
 }
