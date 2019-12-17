@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/foriio/static/css/main.de9ed805.chunk.css",
-    "main.js": "/foriio/static/js/main.bda0529c.chunk.js",
-    "main.js.map": "/foriio/static/js/main.bda0529c.chunk.js.map",
-    "runtime-main.js": "/foriio/static/js/runtime-main.d93c6ca4.js",
-    "runtime-main.js.map": "/foriio/static/js/runtime-main.d93c6ca4.js.map",
-    "static/js/2.1fd3ee9b.chunk.js": "/foriio/static/js/2.1fd3ee9b.chunk.js",
-    "static/js/2.1fd3ee9b.chunk.js.map": "/foriio/static/js/2.1fd3ee9b.chunk.js.map",
-    "index.html": "/foriio/index.html",
-    "precache-manifest.3accbd818f68afaef53ecc547859b85a.js": "/foriio/precache-manifest.3accbd818f68afaef53ecc547859b85a.js",
-    "service-worker.js": "/foriio/service-worker.js",
-    "static/css/main.de9ed805.chunk.css.map": "/foriio/static/css/main.de9ed805.chunk.css.map",
-    "static/js/2.1fd3ee9b.chunk.js.LICENSE": "/foriio/static/js/2.1fd3ee9b.chunk.js.LICENSE"
+    "main.css": "https://anthonyashurst.com/foriio/static/css/main.f4eaa142.chunk.css",
+    "main.js": "https://anthonyashurst.com/foriio/static/js/main.3d4017aa.chunk.js",
+    "main.js.map": "https://anthonyashurst.com/foriio/static/js/main.3d4017aa.chunk.js.map",
+    "runtime-main.js": "https://anthonyashurst.com/foriio/static/js/runtime-main.6be8f4b0.js",
+    "runtime-main.js.map": "https://anthonyashurst.com/foriio/static/js/runtime-main.6be8f4b0.js.map",
+    "static/js/2.1fd3ee9b.chunk.js": "https://anthonyashurst.com/foriio/static/js/2.1fd3ee9b.chunk.js",
+    "static/js/2.1fd3ee9b.chunk.js.map": "https://anthonyashurst.com/foriio/static/js/2.1fd3ee9b.chunk.js.map",
+    "index.html": "https://anthonyashurst.com/foriio/index.html",
+    "precache-manifest.38f0f8702f3188190872c123c4dc82ec.js": "https://anthonyashurst.com/foriio/precache-manifest.38f0f8702f3188190872c123c4dc82ec.js",
+    "service-worker.js": "https://anthonyashurst.com/foriio/service-worker.js",
+    "static/css/main.f4eaa142.chunk.css.map": "https://anthonyashurst.com/foriio/static/css/main.f4eaa142.chunk.css.map",
+    "static/js/2.1fd3ee9b.chunk.js.LICENSE": "https://anthonyashurst.com/foriio/static/js/2.1fd3ee9b.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.d93c6ca4.js",
+    "static/js/runtime-main.6be8f4b0.js",
     "static/js/2.1fd3ee9b.chunk.js",
-    "static/css/main.de9ed805.chunk.css",
-    "static/js/main.bda0529c.chunk.js"
+    "static/css/main.f4eaa142.chunk.css",
+    "static/js/main.3d4017aa.chunk.js"
   ]
 }
