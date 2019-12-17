@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/foriio/static/css/main.3771157a.chunk.css",
-    "main.js": "/foriio/static/js/main.dcf2eeb0.chunk.js",
-    "main.js.map": "/foriio/static/js/main.dcf2eeb0.chunk.js.map",
+    "main.css": "/foriio/static/css/main.f2cb5a55.chunk.css",
+    "main.js": "/foriio/static/js/main.4696f7f8.chunk.js",
+    "main.js.map": "/foriio/static/js/main.4696f7f8.chunk.js.map",
     "runtime-main.js": "/foriio/static/js/runtime-main.d93c6ca4.js",
     "runtime-main.js.map": "/foriio/static/js/runtime-main.d93c6ca4.js.map",
     "static/js/2.5c6cf144.chunk.js": "/foriio/static/js/2.5c6cf144.chunk.js",
     "static/js/2.5c6cf144.chunk.js.map": "/foriio/static/js/2.5c6cf144.chunk.js.map",
     "index.html": "/foriio/index.html",
-    "precache-manifest.17f3e5f51f46394c3166aaaa3a597dd8.js": "/foriio/precache-manifest.17f3e5f51f46394c3166aaaa3a597dd8.js",
+    "precache-manifest.01ba75244bb781f1a852672a3161240f.js": "/foriio/precache-manifest.01ba75244bb781f1a852672a3161240f.js",
     "service-worker.js": "/foriio/service-worker.js",
-    "static/css/main.3771157a.chunk.css.map": "/foriio/static/css/main.3771157a.chunk.css.map",
+    "static/css/main.f2cb5a55.chunk.css.map": "/foriio/static/css/main.f2cb5a55.chunk.css.map",
     "static/js/2.5c6cf144.chunk.js.LICENSE": "/foriio/static/js/2.5c6cf144.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.d93c6ca4.js",
     "static/js/2.5c6cf144.chunk.js",
-    "static/css/main.3771157a.chunk.css",
-    "static/js/main.dcf2eeb0.chunk.js"
+    "static/css/main.f2cb5a55.chunk.css",
+    "static/js/main.4696f7f8.chunk.js"
   ]
 }
