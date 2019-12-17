@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "29db28ada74fcd9cee0b5f247c70f98e",
+    "revision": "1da0e96df9e7c3b17348c62ad99b164c",
     "url": "/foriio/index.html"
   },
   {
-    "revision": "e8ba75fdea500b2f8f33",
-    "url": "/foriio/static/css/main.f2cb5a55.chunk.css"
+    "revision": "03ea3ce5b60cb51e8cdf",
+    "url": "/foriio/static/css/main.dd517d64.chunk.css"
   },
   {
     "revision": "3090c3400d2d128fce4b",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/foriio/static/js/2.5c6cf144.chunk.js.LICENSE"
   },
   {
-    "revision": "e8ba75fdea500b2f8f33",
+    "revision": "03ea3ce5b60cb51e8cdf",
     "url": "/foriio/static/js/main.4696f7f8.chunk.js"
   },
   {
